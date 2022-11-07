@@ -1,15 +1,21 @@
 const express = require('express')
 const postRouter = express.Router()
-const postData = require('../models/seed.js')
+const postData = require('../models/seed')
 const Post = require('../models/post.js')
-console.log(Post)
+
+
+//Seed
+
+
 //Index Route
-postRouter.get('/', (req, res) => {
+postRouter.get('/nofilta', (req, res) => {
     Post.find({}, (error, allPosts) => {
-        res.render('index.ejs', {
-            posts: allPosts
-        })
+        res.render('index.ejs', {posts: allPosts})
     })
+})
+
+postRouter.get('/new', (req, res) =>{
+    res.render('new.ejs')
 })
 
 

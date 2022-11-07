@@ -3,6 +3,8 @@ const app = express()
 const mongoose = require('mongoose')
 const methodOverride = require('method-override')
 const postsController = require('./controllers/post')
+const Post = require('./models/post.js')
+const seedData = require('./models/seed.js')
 
 //env
 require("dotenv").config()
@@ -10,8 +12,8 @@ require("dotenv").config()
 //middleware
 app.use(express.urlencoded({extended: true}))
 app.use(methodOverride('_method'))
-app.use('/post', postsController)
-app.use(express.static('public'))
+app.use('/posts', postsController)
+
 
 //Database Connection
 mongoose.connect(process.env.DATABASE_URL, {
@@ -23,6 +25,8 @@ const db = mongoose.connection
   db.on("error", (err) => console.log(err.message))
   db.on("connected", () => console.log("mongo connected"))
   db.on("disconnected", () => console.log("mongo disconnected"))
+
+
 
 //listener
 const PORT = process.env.PORT
