@@ -2,9 +2,9 @@ const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
 const methodOverride = require('method-override')
-const postsController = require('./controllers/post')
+const postsController = require('./controllers/posts')
 const Post = require('./models/post.js')
-const seedData = require('./models/seed.js')
+
 
 //env
 require("dotenv").config()

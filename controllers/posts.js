@@ -1,10 +1,9 @@
 const express = require('express')
 const postRouter = express.Router()
-const postData = require('../models/seed')
 const Post = require('../models/post.js')
 
 
-//Seed
+
 
 
 //Index Route
@@ -20,29 +19,35 @@ postRouter.get('/new', (req, res) =>{
 })
 
 //Delete
+/*
 postRouter.delete('/:id', (req, res) =>{
     Post.findByIdAndRemove(req.params.id, (err, data) =>{
-        res.redirect('/posts')
+        res.redirect('/feed')
+    })
+})
+*/
+
+//update route
+postRouter.put('/:id', (rew, res) =>{
+    Post.findByIdAndUpdate(req.params.id, req.body, ()=>{
+        res.redirect('/feed')
     })
 })
 
-//update route
-
-
-
-//feed route
-postRouter.post('/feed', (req, res) => {
-    Post.create(req.body, (err, createdPost) =>{
-        console.log(err, createdPost)
+//create
+postRouter.post('/posts', (req, res)=>{
+    Post.create(req.body, (err, createdPost)=>{
+        if(err) console.log(err);
         res.redirect('/feed')
     })
 })
 
 //show
-postRouter.get('/feed', (req, res)=>{
+postRouter.get('/:id', (req, res)=>{
     Post.findById(req.params.id, (err, foundPost)=>{
         res.render('show.ejs', {
-            data: posts[req.params.id]
+           post: foundPost,
+           
         })
     })
 })

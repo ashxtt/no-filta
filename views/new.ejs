@@ -15,10 +15,11 @@
         </style>
        <label for="freeform">Whats on your Mind?</label>
        <div class="post-box">
-        <form action="/posts/feed" method="POST">
-            <textarea id="freeform" name="freeform" rows="4" cols="35"></textarea>
+        <form action="/posts" method="POST">
+             Name: <input type="text" name="name" placeholder="No Real Name">
+             Text: <textarea id="freeform" name="text" rows="4" cols="35"></textarea>
 
-            <h2 class="disclaimer">Mind you, whatever you post is for you, and your eyes only!</h2>
+            <h2 class="disclaimer">TIP: Do Not Use Your Real Name.</h2>
 
             <input type="submit" value="POST">
         </form>
