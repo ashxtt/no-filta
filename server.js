@@ -29,5 +29,5 @@ const db = mongoose.connection
 
 
 //listener
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 3500;
 app.listen(PORT, () => console.log(`PORT: ${PORT} is livin`))
