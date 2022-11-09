@@ -7,20 +7,21 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="public/style.css">
     </head>
     <body>
+     
      <div class="container">
         <nav class="nav-bar">
             <h1>NO FILTA</h1>
         </nav>
         <div class="edit-form">
-            <form action="/posts/<%= post._id%>?_method=PUT" method="POST">
+            <form action="/posts/<%=post%>?_method=PUT" method="POST">
                 
-                    <input type="text" name="name" value=<%= post.name%> placeholder="No Real Name"> />
-                    <input type="text" name="text" value=<%= post.text%> placeholder="..."> />
-                    <input type="text" name="img" value=<%= post.img %> />
-                
+                    Name: <input type="text" name="name" value="<%= post.name%>" placeholder="No Real Name" />
+                   Text: <input type="text" name="text" value="<%= post.text%>" placeholder="..."/>
+                    Image: <input type="text" name="img" value="<%= post.img %>" placeholder="Image Address Here" />
+                    <input type="submit" value="RE-POST"/>
             </form>
         </div>
      </div>

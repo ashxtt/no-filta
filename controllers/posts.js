@@ -28,7 +28,7 @@ postRouter.delete('/:id', (req, res) =>{
 
 
 //update route
-postRouter.put('/:id', (rew, res) =>{
+postRouter.put('/:id', (req, res) =>{
     Post.findByIdAndUpdate(req.params.id, req.body, ()=>{
         res.redirect('/posts')
     })
@@ -47,7 +47,7 @@ postRouter.get('/:id/edit', (req, res)=>{
     Post.findById(req.params.id, (err, foundPost)=>{
         res.render('edit.ejs', {
             post: foundPost,
-            postId: req.params.id
+            post: req.params.id
         })
     })
 })
@@ -55,7 +55,7 @@ postRouter.get('/:id/edit', (req, res)=>{
 //show
 postRouter.get('/:id', (req, res)=>{
     Post.findById(req.params.id, (err, foundPost)=>{
-        res.render('show.ejs', {
+        res.render('index.ejs', {
            post: foundPost,
            
         })
