@@ -33,15 +33,17 @@
             .nav a{
                 text-decoration: none;
                 padding-right: 1rem;
+                color: #f1eeef;
             }
             .nav-logo{
-                color: #49ca16;
+                color: #f1eeef;
             }
             /*===========================*/
             .intro{
                 text-align: center;
                 font-family: 'Exo 2', sans-serif;
                 color:black;
+                font-size: 40px;
                 animation-name: floating;
                 animation-duration: 2s;
                 animation-direction: alternate;
@@ -56,12 +58,32 @@
                 100% {transform: translate(0, -0px);}
             }
             .feed{
-                
+                margin:auto;
+                margin-top: 2rem;
+                display:grid;
+                flex-direction: column;
+                justify-content: center;
+                background-color: #1a4fd6;
+                width: 700px;
+                height:500px;
+                overflow-y: auto;
+                border: 10px  solid black;
+                scroll-behavior: smooth;
+                border-radius: 15px 15px;
+            }
+            #feeds{
+                font-family: 'Stick No Bills', sans-serif;
+                text-align: center;
+                background-color: black;
+                position: absolute;
+                width: 700px;
+                color: aliceblue;
                 
             }
 
             .post-box{
                 margin:2rem;
+                margin-top:2.7rem;
                 border: 3px solid black;
                 border-radius: 10px 10px;
                 background-color: #969696;
@@ -82,7 +104,7 @@
         
         <div class="feed">
             <div class="feed-bar">
-
+                <h1 id="feeds">YOUR FEED</h1>
             </div>
             <% posts.forEach( post => { %>
                 <div class="post-box">
