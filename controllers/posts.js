@@ -9,6 +9,7 @@ const Post = require('../models/post.js')
 //Index Route
 postRouter.get('/', (req, res) => {
     Post.find({}, (error, allPosts) => {
+        console.log(error)
         res.render('index.ejs', {posts: allPosts})
     })
 })
@@ -19,26 +20,25 @@ postRouter.get('/new', (req, res) =>{
 })
 
 //Delete
-/*
 postRouter.delete('/:id', (req, res) =>{
     Post.findByIdAndRemove(req.params.id, (err, data) =>{
-        res.redirect('/feed')
+        res.redirect('/posts')
     })
 })
-*/
+
 
 //update route
 postRouter.put('/:id', (rew, res) =>{
     Post.findByIdAndUpdate(req.params.id, req.body, ()=>{
-        res.redirect('/feed')
+        res.redirect('/posts')
     })
 })
 
 //create
-postRouter.post('/posts', (req, res)=>{
+postRouter.post('/', (req, res)=>{
     Post.create(req.body, (err, createdPost)=>{
         if(err) console.log(err);
-        res.redirect('/feed')
+        res.redirect('/posts')
     })
 })
 

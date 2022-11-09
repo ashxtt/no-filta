@@ -7,16 +7,93 @@
         
     </head>
     <body>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@1,200&display=swap');
+             @import url('https://fonts.googleapis.com/css2?family=Stick+No+Bills:wght@600&display=swap');
+
+             *{
+                padding:0;
+                margin:0;
+             }
+
+            body{
+                background-color: #e0e0e0;
+                
+            }
+
+            /*NAV BAR*/
+            .nav{
+                font-family: 'Stick No Bills', sans-serif;
+                background-color: black;
+                color:white;
+                display:flex;
+                justify-content: space-between;
+                padding:0.6rem;
+            }
+            .nav a{
+                text-decoration: none;
+                padding-right: 1rem;
+            }
+            .nav-logo{
+                color: #49ca16;
+            }
+            /*===========================*/
+            .intro{
+                text-align: center;
+                font-family: 'Exo 2', sans-serif;
+                color:black;
+                animation-name: floating;
+                animation-duration: 2s;
+                animation-direction: alternate;
+                animation-iteration-count: infinite;
+                animation-timing-function: ease-in-out;
+                margin-left:1.5rem;
+                margin-top:0.5rem;
+            }
+            @keyframes floating{
+                0% { tranform: translate(0, 0px);}
+                50% {transform: translate(0, 15px);}
+                100% {transform: translate(0, -0px);}
+            }
+            .feed{
+                
+                
+            }
+
+            .post-box{
+                margin:2rem;
+                border: 3px solid black;
+                border-radius: 10px 10px;
+                background-color: #969696;
+                font-family: 'Exo 2', sans-serif;
+                padding:1rem;
+                
+            }
+            .container{
+                
+            }
+        </style>
        <nav class="nav">
-        <h1>No Filta</h1>
-       
+        <h1 class="nav-logo">No Filta</h1>
+        <a href="/posts/new">New Post</a>
        </nav> 
        <div class="container">
-        <h1>Hello There! Welcome to No Filta, A place to express your thoughts.</h1>
-        <h2>Whats on Your Mind?</h2>
-        <button><a href="/posts/new">New Post</a></button>
+        <h1 class="intro">Hello There!<br> Welcome to No Filta, A place to express your thoughts.</h1>
+        
         <div class="feed">
-            
+            <div class="feed-bar">
+
+            </div>
+            <% posts.forEach( post => { %>
+                <div class="post-box">
+                    <h1>Name: <%= post.name %></h1>
+                     <h2><%= post.text %></h2>
+                   <img src=<%= post.img %>>
+                   <form action="/posts/<%= post._id%>?_method=DELETE" method="post">
+                    <input type="submit" value="DELETE">
+                   </form>
+                </div>
+                <% }) %>
            
        </div>
 

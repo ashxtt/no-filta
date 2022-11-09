@@ -11,22 +11,71 @@
     </head>
     <body>
         <style>
-            
+             @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@1,200&display=swap');
+             @import url('https://fonts.googleapis.com/css2?family=Stick+No+Bills:wght@600&display=swap');
+
+            body{
+                
+                margin:0;
+            }
+
+             .nav{
+                overflow: hidden;
+                background-color: black;
+                color:white;
+                box-shadow: 0 2px 4px 0 black;
+                
+             }
+             .nav-logo{
+                margin:1rem;
+                font-family: 'Stick No Bills', sans-serif;
+                font-size: 30px;
+             }
+             
+             .container{
+                background-color: bisque;
+                display: inline-block;
+                display: grid;
+                justify-content: center;
+             }
+
+             .post-box{
+                
+                display:grid;
+                justify-content: center;
+             }
+             h2{
+                display: grid;
+                justify-content: center;
+                font-family: 'Exo 2', sans-serif;
+             }
+             .form-cont{
+                display:flex;
+                flex-direction: column;
+             }
+             
+
         </style>
-       <label for="freeform">Whats on your Mind?</label>
+
+        <nav class="nav">
+            <h1 class="nav-logo">No Filta</h1>
+           
+        </nav> 
+    <div class="container">
+       <h2>Whats on your Mind?</h2>
        <div class="post-box">
         <form action="/posts" method="POST">
-             Name: <input type="text" name="name" placeholder="No Real Name">
-             Text: <textarea id="freeform" name="text" rows="4" cols="35"></textarea>
-
+             Name: <input class="form-cont" type="text" name="name" placeholder="No Real Name">
+             Text: <textarea class="form-cont" id="freeform" name="text" rows="4" cols="35"></textarea>
+            Img: <input type="text" name="img" placeholder="Paste in image address"/>
             <h2 class="disclaimer">TIP: Do Not Use Your Real Name.</h2>
 
             <input type="submit" value="POST">
         </form>
       
-       </div>
+        </div>
        
        <button><a href="/posts">CANCEL</a></button>
-        
+    </div>
     </body>
 </html>
