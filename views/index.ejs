@@ -91,9 +91,19 @@
                 padding:1rem;
                 
             }
-            .container{
-                
+            .delete{
+                background-color: black;
+                color: #f1eeef;
+                border: 2px solid #1a4fd6;
+                border-radius: 2px 2px;
             }
+            .delete:hover{
+                background-color: #C10B29;
+                color:black;
+                border:3px solid #C10B29;
+                font-size: 20px;
+            }
+            
         </style>
        <nav class="nav">
         <h1 class="nav-logo">No Filta</h1>
@@ -112,8 +122,10 @@
                      <h2><%= post.text %></h2>
                    <img src=<%= post.img %>>
                    <form action="/posts/<%= post._id%>?_method=DELETE" method="post">
-                    <input type="submit" value="DELETE">
+                    <input class="delete" type="submit" value="DELETE">
+                    <button><a href="/posts/:id/edit">EDIT</a></button>
                    </form>
+                   
                 </div>
                 <% }) %>
            

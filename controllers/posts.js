@@ -42,6 +42,16 @@ postRouter.post('/', (req, res)=>{
     })
 })
 
+//edit
+postRouter.get('/:id/edit', (req, res)=>{
+    Post.findById(req.params.id, (err, foundPost)=>{
+        res.render('edit.ejs', {
+            post: foundPost,
+            postId: req.params.id
+        })
+    })
+})
+
 //show
 postRouter.get('/:id', (req, res)=>{
     Post.findById(req.params.id, (err, foundPost)=>{
