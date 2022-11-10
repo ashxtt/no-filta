@@ -15,7 +15,7 @@
 |Day 6| Present | incomplete
 
 ## Wireframes
-(IMG_0029.jpg)
+IMG_0029.jpg
 
 ## Time/Priority Matrix 
 
