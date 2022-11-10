@@ -15,7 +15,7 @@
 |Day 6| Present | incomplete
 
 ## Wireframes
-IMG_0029.jpg
+![alt text](https://imgur.com/a/bjNX6oO)
 
 ## Time/Priority Matrix 
 
