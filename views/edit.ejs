@@ -16,7 +16,7 @@
             <h1>NO FILTA</h1>
         </nav>
         <div class="edit-form">
-            <form action="/posts/<%=post%>?_method=PUT" method="POST">
+            <form action="/posts/<%= post._id %>/?_method=put" method="POST">
                 
                     Name: <input type="text" name="name" value="<%= post.name%>" placeholder="No Real Name" />
                    Text: <input type="text" name="text" value="<%= post.text%>" placeholder="..."/>

@@ -46,8 +46,7 @@ postRouter.post('/', (req, res)=>{
 postRouter.get('/:id/edit', (req, res)=>{
     Post.findById(req.params.id, (err, foundPost)=>{
         res.render('edit.ejs', {
-            post: foundPost,
-            post: req.params.id
+            post: foundPost
         })
     })
 })
@@ -56,8 +55,7 @@ postRouter.get('/:id/edit', (req, res)=>{
 postRouter.get('/:id', (req, res)=>{
     Post.findById(req.params.id, (err, foundPost)=>{
         res.render('index.ejs', {
-           post: foundPost,
-           
+            post: foundPost
         })
     })
 })

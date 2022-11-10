@@ -7,7 +7,7 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <style>
@@ -53,6 +53,21 @@
                 display:flex;
                 flex-direction: column;
              }
+             #img{
+               font-size:20px;
+             }
+
+             #post{
+               background-color: black;
+               color: white;
+             }
+
+             button{
+               background-color: black;
+             }
+             button a{
+               color:white;
+             }
              
 
         </style>
@@ -67,10 +82,10 @@
         <form action="/posts" method="POST">
              Name: <input class="form-cont" type="text" name="name" placeholder="No Real Name">
              Text: <textarea class="form-cont" id="freeform" name="text" rows="4" cols="35"></textarea>
-            Img: <input type="text" name="img" placeholder="Paste in image address"/>
+            Img: <input id="img" type="text" name="img" placeholder="Paste in image address"/>
             <h2 class="disclaimer">TIP: Do Not Use Your Real Name.</h2>
 
-            <input type="submit" value="POST">
+            <input id="post" type="submit" value="POST">
         </form>
       
         </div>
